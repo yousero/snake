@@ -1,0 +1,9 @@
+main {
+  display: flex;
+  max-width: 480px;
+  margin: auto;
+}
+
+#canvas {
+  cursor: pointer;
+}
