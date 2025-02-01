@@ -2,7 +2,7 @@
 /**
  * snake <https://yousero.github.io/snake/>
  * @author yousero yousero.art@gmail.com
- * @version 0.0.3
+ * @version 0.0.4
  */
 
 const canvas = document.getElementById('canvas')
