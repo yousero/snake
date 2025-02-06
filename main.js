@@ -2,7 +2,7 @@
 /**
  * snake <https://yousero.github.io/snake/>
  * @author yousero yousero.art@gmail.com
- * @version 0.0.6
+ * @version 0.0.7
  */
 
 const canvas = document.getElementById('canvas')
@@ -53,7 +53,10 @@ const snakeBody = {
   height: size,
   draw(x, y) {
     ctx.fillStyle = this.color
-    ctx.fillRect(x + border, y + border, this.width, this.height)
+    ctx.fillRect(x + border + margin,
+                 y + border + margin,
+                 this.width,
+                 this.height)
   }
 }
 
@@ -63,7 +66,10 @@ const snakeHead = {
   height: size + margin,
   draw(x, y) {
     ctx.fillStyle = this.color
-    ctx.fillRect(x + border - 1, y + border - 1, this.width, this.height)
+    ctx.fillRect(x + border - 1 + margin,
+                 y + border - 1 + margin,
+                 this.width,
+                 this.height)
   }
 }
 
@@ -73,7 +79,10 @@ const food = {
   height: size,
   draw(x, y) {
     ctx.fillStyle = this.color
-    ctx.fillRect(x + border, y + border, this.width, this.height)
+    ctx.fillRect(x + border + margin,
+                 y + border + margin,
+                 this.width,
+                 this.height)
   }
 }
 
@@ -108,7 +117,7 @@ function moveSnake() {
     return
   }
 
-  // // Self collision
+  // Self collision
   // for (let i = 1; i < snake.length; i++) {
   //   if (head.x === snake[i].x && head.y === snake[i].y) {
   //     gameOver = true
