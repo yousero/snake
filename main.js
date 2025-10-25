@@ -11,19 +11,19 @@ const source = document.createElement('canvas')
 canvas.height = source.height = 480
 canvas.width = source.width = 480
 
-let border = 2
-let size = 12
-let margin = 2
-
 const ctx = source.getContext('2d')
 
 const gridSize = 20
 const tileCount = canvas.width / gridSize
 
+let border = 2
+let size = 12
+let margin = 2
+
 let snake = [
   { x: 10, y: 10 },
-  { x: 10, y: 9 },
-  { x: 10, y: 8 }
+  { x: 10, y: 11 },
+  { x: 10, y: 12 }
 ]
 let direction = { x: 0, y: -1 }
 let foodPos = { x: 15, y: 15 }
@@ -116,14 +116,13 @@ function moveSnake() {
     gameOver = true
     return
   }
-
   // Self collision
-  // for (let i = 1; i < snake.length; i++) {
-  //   if (head.x === snake[i].x && head.y === snake[i].y) {
-  //     gameOver = true
-  //     return
-  //   }
-  // }
+  for (let i = 1; i < snake.length; i++) {
+    if (head.x === snake[i].x && head.y === snake[i].y) {
+      gameOver = true
+      return
+    }
+  }
 
   snake.unshift(head)
 
@@ -194,8 +193,8 @@ document.addEventListener('click', () => {
     gameOver = false
     snake = [
       { x: 10, y: 10 },
-      { x: 10, y: 9 },
-      { x: 10, y: 8 }
+      { x: 10, y: 11 },
+      { x: 10, y: 12 }
     ]
     direction = { x: 0, y: -1 }
     generateFood()
